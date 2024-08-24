@@ -12,7 +12,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         {/* <FirstApp subtitle={123}/>  */}
         {/* <FirstApp/>  */}
         <>
-            <CounterApp value={12}/>
+            {/* <CounterApp value={12}/> */}
+            <FirstApp/>
         </>
     </React.StrictMode>
 );

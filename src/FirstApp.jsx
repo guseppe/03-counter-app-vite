@@ -9,16 +9,17 @@ const getMessage = ()=>{
   return 'Hola Mundo';
 }
 // export const FirstApp = ({title = 'default value', subtitle}) => {
-  export const FirstApp = ({title, subtitle}) => {
+  export const FirstApp = ({title, subtitle='no hay subtitulo'}) => {
   //const newMessage = 'Guseppe'; //se puede colocar fuera (no es un elemnto global, pertenece a un mismo modulo) si la expresion no necesita ser recalculada al renderizar nuevamente
   // console.log(title); //es mas habitual desestructurar las props
   return (
     <> {/*Uso de un Fragment implicito*/}
-      <h1>{title}</h1> 
+      <h1 data-testid='titleId'>{title}</h1> 
       {/* <h1>{props.title}</h1> */}
       {/* <h1>{newMessage.message}</h1> */}
       {/* <h1>{getMessage()}</h1> */}
       {/* <code>{JSON.stringify(newMessage)}</code> */}
+      <p>{subtitle}</p>
       <p>{subtitle}</p>
     </>
   )
@@ -26,9 +27,9 @@ const getMessage = ()=>{
 
 FirstApp.propTypes = {
   title: PropTypes.string.isRequired,
-  subtitle: PropTypes.number
+  subtitle: PropTypes.string
+  //subtitle: PropTypes.number
 }
-FirstApp.defaultProps = {
-  title: 'No hay titulo',
-  subtitle: 'No hay subtitulo'
-}
+// FirstApp.defaultProps = {
+//   subtitle: 'No hay subtitulo'
+// }
